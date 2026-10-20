@@ -7,7 +7,41 @@
   <title>Панель управления Besmoynaq</title>
 </head>
 <body>
+  <script>
+    window.CMS_MANUAL_INIT = true;
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/decap-cms@3/dist/decap-cms.js"></script>
+  <script>
+    CMS.init({
+      config: {
+        load_config_file: false,
+        backend: {
+          name: "turbo-github",
+          turbo_site_id: "85bf0a01-fe9a-4634-943b-bcd42a17315a",
+          branch: "main"
+        },
+        media_folder: "images",
+        public_folder: "/besmoynaq/images",
+        collections: [
+          {
+            name: "pages",
+            label: "Страницы",
+            files: [
+              {
+                name: "design",
+                label: "Настройки дизайна",
+                file: "data/design.yml",
+                fields: [
+                  { label: "Цвет фона", name: "background", widget: "string" },
+                  { label: "Основной цвет", name: "primary_color", widget: "string" },
+                  { label: "Цвет текста", name: "text_color", widget: "string" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
-
