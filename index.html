@@ -101,21 +101,6 @@ body.editing [data-edit]{outline:1px dashed var(--gold);outline-offset:3px;curso
 </main>
 <footer data-edit>Бесмойнақ · Өлкемнің цифрлық шежіресі · 2026</footer>
 
-<button class="btn" id="editToggle" onclick="toggleEdit()">✏️ Редакциялау</button>
-<div id="editor">
- <strong>Сайт редакторы</strong><br>
- <button class="btn" onclick="saveSite()">💾 Сақтау</button>
- <button class="btn" onclick="addSection()">＋ Бөлім қосу</button>
- <button class="btn" onclick="document.getElementById('colorInput').click()">🎨 Фон түсі</button>
- <input id="colorInput" type="color" value="#091b22" style="width:35px" onchange="document.documentElement.style.setProperty('--bg',this.value)">
- <button class="btn" onclick="document.getElementById('fileInput').click()">🖼️ Сурет таңдау</button>
- <input type="file" id="fileInput" accept="image/*">
- <button class="btn" onclick="deleteSection()">🗑️ Бөлімді жою</button>
- <button class="btn" onclick="exportSite()">⬇️ HTML жүктеу</button>
- <button class="btn btn2" onclick="toggleEdit()">Дайын</button>
- <p style="font-size:12px;color:#b6c7c9;margin:5px">Мәтінді басып өзгертіңіз. Бөлімді таңдау үшін оның бос жерін басыңыз. Сақтау осы браузерде орындалады.</p>
-</div>
-
 <script>
 let editing=false,selectedSection=null,selectedImage=null;
 const editor=document.getElementById('editor');
