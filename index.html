@@ -1,1 +1,202 @@
 
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бесмойнақ — Цифрлық шежіре</title>
+<style>
+:root{--bg:#091b22;--panel:#102b32;--gold:#e6bb73;--text:#f6f1e7;--muted:#b6c7c9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.7}
+header{position:sticky;top:0;background:#091b22ee;backdrop-filter:blur(12px);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;gap:15px;z-index:5;border-bottom:1px solid #ffffff22}
+.logo{font-weight:bold;color:var(--gold);font-size:21px}
+nav{display:flex;gap:16px;flex-wrap:wrap}
+a{color:var(--text);text-decoration:none}
+a:hover{color:var(--gold)}
+.hero{padding:100px 8%;min-height:460px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(110deg,#0b2933,#24504d,#091b22)}
+.eyebrow{color:var(--gold);letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.1;margin:15px 0}
+h2{font-size:clamp(28px,4vw,42px);margin-top:0}
+h3{color:var(--gold)}
+.hero p{max-width:650px;font-size:19px;color:#d4e1df}
+.btn{display:inline-block;background:var(--gold);color:#102b32;padding:11px 17px;border:0;border-radius:8px;cursor:pointer;font-weight:bold}
+.btn2{background:transparent;color:var(--text);border:1px solid #ffffff55}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+section{padding:65px 7%;max-width:1250px;margin:auto}
+.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:var(--panel);padding:23px;border:1px solid #ffffff18;border-radius:14px}
+.icon{font-size:30px}
+.timeline{border-left:2px solid var(--gold);padding-left:25px;margin-left:10px}
+.event{margin:25px 0;position:relative}
+.event:before{content:"";position:absolute;left:-33px;top:10px;background:var(--gold);width:13px;height:13px;border-radius:50%}
+.year{font-size:22px;color:var(--gold);font-weight:bold}
+.gallery img{width:100%;height:210px;object-fit:cover;border-radius:10px}
+.gallery .card{padding:12px}
+.placeholder{min-height:150px;display:grid;place-items:center;background:#17383e;border:1px dashed #e6bb7380;border-radius:10px;text-align:center;padding:15px}
+footer{text-align:center;padding:35px;background:#07161c;color:var(--muted)}
+#editor{display:none;position:fixed;z-index:20;bottom:12px;left:12px;right:12px;background:#142f37;border:1px solid var(--gold);padding:13px;border-radius:12px;box-shadow:0 5px 30px #0009}
+#editor button,#editor label{margin:4px}
+body.editing [data-edit]{outline:1px dashed var(--gold);outline-offset:3px;cursor:text}
+#editToggle{position:fixed;z-index:21;right:16px;bottom:16px;box-shadow:0 4px 20px #0008}
+#editor input[type=file]{display:none}
+@media(max-width:700px){.grid{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}.hero{padding:70px 7%}section{padding:45px 6%}nav{gap:12px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="logo">✦ БЕСМОЙНАҚ</div>
+ <nav>
+  <a href="#history">Тарих</a><a href="#tour">Экскурсия</a><a href="#shezhire">Шежіре</a><a href="#archive">Мұрағат</a>
+ </nav>
+</header>
+
+<main>
+<div class="hero" data-section>
+ <div class="eyebrow" data-edit>Өлкемнің цифрлық шежіресі</div>
+ <h1 data-edit>Бесмойнақ:<br>тарихтан болашаққа</h1>
+ <p data-edit>Ауылдың өткені мен бүгінін цифрлық кеңістікте таныстыратын интерактивті музей.</p>
+ <div class="actions"><a class="btn" href="#tour">Виртуалды саяхат</a><a class="btn btn2" href="#shezhire">Тарихи шежіре</a></div>
+</div>
+
+<section id="history" data-section>
+ <div class="eyebrow" data-edit>Туған жер тарихы</div>
+ <h2 data-edit>Бесмойнақтың рухани мұрасы</h2>
+ <p class="muted" data-edit>Бұл бөлімге ауылдың тарихы, жергілікті тұрғындардың естеліктері және архив деректері енгізіледі.</p>
+ <div class="grid">
+  <article class="card"><div class="icon">🏛️</div><h3 data-edit>Тарихи деректер</h3><p data-edit>Ауылдың қалыптасуы, тарихи кезеңдер мен оқиғалар.</p></article>
+  <article class="card"><div class="icon">🗺️</div><h3 data-edit>Туған жер</h3><p data-edit>Ауылдың табиғаты, орналасуы және тарихи орындары.</p></article>
+  <article class="card"><div class="icon">🎙️</div><h3 data-edit>Ауызша тарих</h3><p data-edit>Ауыл тұрғындарының естеліктері мен әңгімелері.</p></article>
+ </div>
+</section>
+
+<section id="tour" data-section>
+ <div class="eyebrow" data-edit>Интерактивті саяхат</div>
+ <h2 data-edit>Виртуалды экскурсия</h2>
+ <p class="muted" data-edit>Бұл жерге Бесмойнақ ауылының панорамалық суретін немесе бейнежазбасын қосуға болады.</p>
+ <div class="placeholder" data-image>⛰️<br>Суретті өзгерту үшін редакторды қосып, осы жерді бас</div>
+</section>
+
+<section id="shezhire" data-section>
+ <div class="eyebrow" data-edit>Уақыт белдеуі</div>
+ <h2 data-edit>Бесмойнақтың цифрлық шежіресі</h2>
+ <div class="timeline">
+  <div class="event"><div class="year" data-edit>1909 жылдан бастап</div><p class="muted" data-edit>Ауылдың ерте тарихы мен алғашқы деректерін зерттеу.</p></div>
+  <div class="event"><div class="year" data-edit>ХХ ғасыр</div><p class="muted" data-edit>Ауылдың тұрмысы, мектебі және мәдениеті туралы мәліметтер.</p></div>
+  <div class="event"><div class="year" data-edit>Тәуелсіздік кезеңі</div><p class="muted" data-edit>Ауылдағы өзгерістер мен жаңа жетістіктер.</p></div>
+  <div class="event"><div class="year" data-edit>2026 жыл</div><p class="muted" data-edit>Тарихи мұраны цифрлық форматта сақтау жобасы.</p></div>
+ </div>
+</section>
+
+<section id="archive" data-section>
+ <div class="eyebrow" data-edit>Естелік пен мұра</div>
+ <h2 data-edit>Цифрлық мұрағат</h2>
+ <div class="grid gallery">
+  <div class="card"><div class="placeholder" data-image>📷<br>Ескі фотосурет</div><p data-edit>Ауылдың тарихи фотосуреттері</p></div>
+  <div class="card"><div class="placeholder" data-image>📜<br>Архив құжаты</div><p data-edit>Құжаттар мен жазбалар</p></div>
+  <div class="card"><div class="placeholder" data-image>🏞️<br>Қазіргі ауыл</div><p data-edit>Бүгінгі Бесмойнақ</p></div>
+ </div>
+</section>
+</main>
+<footer data-edit>Бесмойнақ · Өлкемнің цифрлық шежіресі · 2026</footer>
+
+<button class="btn" id="editToggle" onclick="toggleEdit()">✏️ Редакциялау</button>
+<div id="editor">
+ <strong>Сайт редакторы</strong><br>
+ <button class="btn" onclick="saveSite()">💾 Сақтау</button>
+ <button class="btn" onclick="addSection()">＋ Бөлім қосу</button>
+ <button class="btn" onclick="document.getElementById('colorInput').click()">🎨 Фон түсі</button>
+ <input id="colorInput" type="color" value="#091b22" style="width:35px" onchange="document.documentElement.style.setProperty('--bg',this.value)">
+ <button class="btn" onclick="document.getElementById('fileInput').click()">🖼️ Сурет таңдау</button>
+ <input type="file" id="fileInput" accept="image/*">
+ <button class="btn" onclick="deleteSection()">🗑️ Бөлімді жою</button>
+ <button class="btn" onclick="exportSite()">⬇️ HTML жүктеу</button>
+ <button class="btn btn2" onclick="toggleEdit()">Дайын</button>
+ <p style="font-size:12px;color:#b6c7c9;margin:5px">Мәтінді басып өзгертіңіз. Бөлімді таңдау үшін оның бос жерін басыңыз. Сақтау осы браузерде орындалады.</p>
+</div>
+
+<script>
+let editing=false,selectedSection=null,selectedImage=null;
+const editor=document.getElementById('editor');
+const toggleButton=document.getElementById('editToggle');
+
+function toggleEdit(){
+ editing=!editing;
+ document.body.classList.toggle('editing',editing);
+ editor.style.display=editing?'block':'none';
+ toggleButton.textContent=editing?'✏️ Редактор ашық':'✏️ Редакциялау';
+ document.querySelectorAll('[data-edit]').forEach(el=>el.contentEditable=editing);
+ document.querySelectorAll('[data-section]').forEach(el=>{
+  el.onclick=function(e){
+   if(editing&&!e.target.closest('a,button')) selectedSection=el;
+  };
+ });
+ document.querySelectorAll('[data-image]').forEach(el=>{
+  el.onclick=function(){
+   if(editing){selectedImage=el;document.getElementById('fileInput').click();}
+  };
+ });
+}
+function saveSite(){
+ localStorage.setItem('besmoynaq-html',document.querySelector('main').innerHTML);
+ localStorage.setItem('besmoynaq-footer',document.querySelector('footer').innerHTML);
+ localStorage.setItem('besmoynaq-bg',getComputedStyle(document.documentElement).getPropertyValue('--bg').trim());
+ alert('Сақталды! Өзгерістер осы браузерде сақталды.');
+}
+function loadSite(){
+ try{
+  const saved=localStorage.getItem('besmoynaq-html');
+  if(saved)document.querySelector('main').innerHTML=saved;
+  const footer=localStorage.getItem('besmoynaq-footer');
+  if(footer)document.querySelector('footer').innerHTML=footer;
+  const bg=localStorage.getItem('besmoynaq-bg');
+  if(bg)document.documentElement.style.setProperty('--bg',bg);
+ }catch(e){}
+}
+function addSection(){
+ const s=document.createElement('section');
+ s.dataset.section='';
+ s.innerHTML='<div class="eyebrow" data-edit>Жаңа бөлім</div><h2 data-edit>Бөлім атауы</h2><p data-edit>Мұнда өз мәтініңізді жазыңыз.</p>';
+ document.querySelector('main').appendChild(s);
+ selectedSection=s;
+ s.querySelectorAll('[data-edit]').forEach(el=>el.contentEditable='true');
+ s.onclick=()=>{if(editing)selectedSection=s};
+}
+function deleteSection(){
+ if(!selectedSection){alert('Алдымен жойғыңыз келетін бөлімді басыңыз.');return}
+ if(confirm('Осы бөлімді жоясыз ба?')){selectedSection.remove();selectedSection=null}
+}
+document.getElementById('fileInput').addEventListener('change',e=>{
+ const f=e.target.files[0];if(!f||!selectedImage)return;
+ const r=new FileReader();
+ r.onload=()=>{
+  selectedImage.innerHTML='';
+  selectedImage.style.backgroundImage='url("'+r.result+'")';
+  selectedImage.style.backgroundSize='cover';
+  selectedImage.style.backgroundPosition='center';
+  selectedImage.style.minHeight='240px';
+  selectedImage.dataset.uploaded=r.result;
+ };
+ r.readAsDataURL(f);e.target.value='';
+});
+function exportSite(){
+ saveSite();
+ const copy=document.documentElement.cloneNode(true);
+ const savedMain=localStorage.getItem('besmoynaq-html');
+ if(savedMain)copy.querySelector('main').innerHTML=savedMain;
+ const savedFooter=localStorage.getItem('besmoynaq-footer');
+ if(savedFooter)copy.querySelector('footer').innerHTML=savedFooter;
+ copy.querySelector('#editor').style.display='none';
+ copy.body.classList.remove('editing');
+ copy.querySelectorAll('[contenteditable]').forEach(el=>el.removeAttribute('contenteditable'));
+ const blob=new Blob(['<!DOCTYPE html>\n'+copy.outerHTML],{type:'text/html;charset=utf-8'});
+ const a=document.createElement('a');
+ a.href=URL.createObjectURL(blob);a.download='index.html';a.click();
+ URL.revokeObjectURL(a.href);
+}
+loadSite();
+</script>
+</body>
+</html>
+
